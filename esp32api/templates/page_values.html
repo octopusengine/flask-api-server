@@ -1,0 +1,34 @@
+{% extends "layout_base.html" %}
+{% block body %}
+	{{ super() }}
+	<span id="data_start">Data:</span>
+	<script src="{{ url_for('static', filename='vendor/polyfills/eventsource.min.js') }}"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		// Spustime to
+		evtSrc = new EventSource(window.location.href + "/subscribe");
+		evtSrc.onerror = function(e) {
+			location.reload();
+		};
+		evtSrc.onmessage = function(e) {
+			/* Aby to bylo efektivni budou data obsahovat kolekci radku s informacemi
+			co se s nimi ma provest - add, update nebo remove 
+			Prekresleni se pak provede az po vyrizeni celeho bloku */
+			var obj = JSON.parse(e.data);
+			if (typeof obj.data !== 'undefined' && obj.data.length > 0) {
+				data_start = $('#data_start');
+				obj.data.forEach(function(entry) {
+					el = '<div><span>'+entry["name"]+"</span>:<span>"+entry["value"]+'</span></div>';
+					data_start.after(el);
+				});
+			}
+			console.log(e.data);
+		}
+		jQuery(window).bind("beforeunload", function() { 
+			if (evtSrc) {
+				evtSrc.close();
+			}
+		});
+	});
+	</script>
+{% endblock %}
