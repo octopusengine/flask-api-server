@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="menu"> <a href="./">home</a> | <a href="./test">test</a> | <a href="./auth">auth</a> | chat | <a href="./links">links</a></div>
+<br />
+<h2>simple public chat | guestbook</h2>
+<br />
+
+<img src="{{url_for('static', filename='si.png')}}" align="middle" />
+<br /><br /><br />
+Lorem ipsum<br /><br /><br />
+
+<div class="pad22">
+<form method="POST">
+  <label for="fname">Nick:</label><br />
+  <input type="text" name="nick" value="anonymous"><br /><br />
+  <label for="lname">Message:</label><br />
+  <input type="text" name="msg" value=" "><br /><br /><br />
+  <input type="submit" value="> Submit <">
+</form> 
+</div>
+
+<br /><br /><br />
+<img src="{{url_for('static', filename='bg_cyber.png')}}" width="638"/>
+<br />
+
+{% endblock %}

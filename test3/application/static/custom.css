@@ -1,0 +1,67 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: #f2f6e9;
+}
+/*--- navigation bar ---*/
+.navbar {
+  background: #97bf0d;
+}
+.navbar h2 {
+  margin-top: 10px;
+  color: rgba(255,255,255,0.8);
+}
+
+.navbar h2 .badge {
+  color: rgba(255,255,255,0.8);
+}
+
+.navbar-dark .navbar-nav .nav-link,
+.navbar .nav-link,
+.navbar-brand {
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-link {
+  margin-right: 1em !important;
+}
+.nav-link:hover {
+  color: #000;
+}
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+h1 {
+  margin-bottom: 28px;
+}
+
+.accordion .card-header, .tootlip-pointer {
+  cursor: pointer;
+}
+
+footer {
+  height: 500px;
+}
+
+.billing-items-list {
+  margin-bottom: 20px;
+}
+
+
+/*--- bootstrap popper tooltips ---*/
+
+.tooltip-inner {
+  max-width: 400px;
+}
+
+/* fixing safari https://github.com/twbs/bootstrap/issues/24219 */
+
+.row:before, .row:after {
+  display: inline-block;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  cursor: pointer;
+}

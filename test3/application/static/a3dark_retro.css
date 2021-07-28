@@ -1,0 +1,120 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'PressStart2PRegular';
+  src: url('PressStart2P-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  }
+
+
+body {
+  padding: 0 2rem;
+  margin: 0 2rem;
+  background-image: url("grad-bla.png");
+  background-color: #333;
+
+  font-family: 'PressStart2PRegular';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 0.6em;
+  
+  color: ForestGreen;
+  line-height: 1.35em;
+}
+
+.col_ora { color: Orange;}
+.col_bla { color: Black;}
+.col_sil { color: Silver;}
+
+
+.small {
+  font-size: 0.6em;
+  color: ForestGreen;
+  line-height: 1.6em;
+}
+ 
+
+
+pre {
+  font-family: 'PressStart2PRegular';
+  font-weight: normal;
+  font-style: normal;
+  color: ForestGreen;
+  line-height: 1.5em;
+}
+
+
+.wrap {
+  margin: 0 auto;
+  width: 640px;
+  padding: 50px;
+  word-wrap: break-word;
+  background-color: Black;
+}
+
+a:link, a:visited, a:active { color: ForestGreen; }
+
+a:hover {  color: LimeGreen; }
+
+hr {  border-top: 3px solid Green; }
+
+
+.pad8  { padding: 8px; }
+.pad22 { padding: 22px; }
+.pad55 { padding: 55px; }
+
+div.menu {
+  background-color: #020;
+  padding: 8px;
+  border-style: solid;
+  border-color: Green;
+  border-color: DarkGreen DarkGreen LimeGreen DarkGreen ;
+  color: LimeGreen;
+}
+
+div.borsh {
+  border-style: solid;
+  border-color: LimeGreen DarkGreen DarkGreen LimeGreen;
+
+}
+
+h2, h3 {
+  border-style: solid;
+  border-left-width: 12px;
+  border-color: Black;
+  border-left-color: ForestGreen;
+  padding: 0px;
+  padding-left: 12px;
+  color: LimeGreen; 
+}
+
+input[type=text], select {
+  background-color: #010;
+  font-family: 'PressStart2PRegular';
+  font-size: 1.1em;
+  color: LimeGreen; 
+  width: 100%;
+  padding: 12px 20px;
+  /*margin: 8px 0;*/
+  display: inline-block;
+  border-left: 3px solid DarkGreen;
+  border-color: DarkGreen LimeGreen LimeGreen DarkGreen;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  font-family: 'PressStart2PRegular';
+  font-size: 1.2em;
+  width: 100%;
+  background-color: #4CAF50;
+  color: Black; 
+  padding: 14px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}

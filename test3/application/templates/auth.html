@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="menu"> <a href="./">home</a> | <a href="./test">test</a> | auth | <a href="./chat">chat</a> | <a href="./links">links</a></div>
+<br />
+<h2>authentication</h2>
+<br />
+<img src="{{url_for('static', filename='si.png')}}" align="left" />
+for some other functions we prepare the input only after entering the necessary key.
+<br /><br /><br />
+
+
+<div class="pad55">
+<br />
+<form method="POST">
+  <label for="fname">Key:</label><br>
+  <input type="text" name="key" value="secret key"><br>
+  <br><br>
+  <input type="submit" value="> Submit <">
+  <br />
+</form>
+</div>
+
+<br /><br /><br />
+
+Quis aute iure reprehenderit in voluptate velit esse cillum dolore 
+eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, 
+sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+{% endblock %}

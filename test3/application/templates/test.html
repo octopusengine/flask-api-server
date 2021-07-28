@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="menu"> <a href="./">home</a> | test | <a href="./auth">auth</a> | <a href="./chat">chat</a> | <a href="./links">links</a></div>
+<br />
+<div class="borsh pad8">
+<h3>bitcoin price</h3>
+We get the current price of bitcoin from the coinpaprika.com, always after loading the page.
+<br />
+<h1 class=col_ora><img src="{{url_for('static', filename='btc2.png')}}" width="30" height="25"/>{{varnum}} USD/BTC</h1>
+<br />
+<br />
+</div>
+<h3>Donate</h3>
+<a href="http://explorerzydxu5ecjrkwceayqybizmpjjznk5izmitf2modhcusuqlid.onion/address/bc1q4sr56yf0awh2td28vzjdz2erl0tu7agama20sf">bc1q4sr56yf0awh2td28vzjdz2erl0tu7agama20sf</a>
+<br /><br/>
+
+
+<h3>Block stream explorer</h3>
+<a href="http://explorerzydxu5ecjrkwceayqybizmpjjznk5izmitf2modhcusuqlid.onion/">explorerzydxu5ecjrkwceayqybizmpjjznk5izmitf2modhcusuqlid.onion/</a>
+<br />
+<br />
+<img src="{{url_for('static', filename='si3.png')}}" align="middle" />
+<img src="{{url_for('static', filename='si1.png')}}" align="middle" />
+<img src="{{url_for('static', filename='si2.png')}}" align="middle" />
+...<br />
+
+{% endblock %}

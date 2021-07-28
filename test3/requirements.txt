@@ -1,0 +1,4 @@
+Bootstrap-Flask==1.5
+Flask==1.1.2
+httpx
+
