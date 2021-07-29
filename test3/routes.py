@@ -45,7 +45,7 @@ def page2():
     return render_template('page2.html', msg=main_msg)
 
 
-@app.route('/info3')
+@app.route('/info21')
 def info3():
    add_log("info")
    ibase = "(you.tor.nginx.uwsgi.flask.me)\n"
