@@ -95,14 +95,14 @@ def led1():
        key = request.form.get("act")
        rc = "key is {}.".format(key)
        if key == "on":
-           action="https://octopuslab.cz/api/led1.php?light=on"
+           action="https://octopuslab.cz/apitest/led1.php?light=on"
            try:
              res = httpx.get(action)
              rc = "ok, on (" + str(res) + ")"
            except:
              rc = "server.err"
        if key == "off":
-           action="https://octopuslab.cz/api/led1.php?light=off"
+           action="https://octopuslab.cz/apitest/led1.php?light=off"
            try:
              res = httpx.get(action)
              rc = "ok, off (" + str(res) + ")"
