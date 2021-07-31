@@ -1,10 +1,13 @@
-from flask import render_template, request, redirect, url_for, session
+from flask import render_template, request, redirect, url_for, session, send_file
 from flask import current_app as app
+from flask_qrcode import QRcode
 import random, json, httpx
 from .agama3 import add_log, log_tail, bitcoin_usd, print_octopus, system_info
 from .agama3db import db_log_list, add_msg_txt, tail_msg_txt, tail_msg_list
 from .agama3extern import my_auth
 # import requests
+
+qrcode = QRcode(app)
 
 main_msg="..."  #ag()
 AUTH3 = my_auth()
@@ -29,7 +32,7 @@ def auth():
     add_log("auth")
     if request.method == "POST":
        key = request.form.get("key")
-       if key == "abc":
+       if key == AUTH3:
           return render_template('info.html', sys_info = system_info())
     return render_template('auth.html')
 
@@ -45,7 +48,7 @@ def page2():
     return render_template('page2.html', msg=main_msg)
 
 
-@app.route('/info21')
+@app.route('/info3')
 def info3():
    add_log("info")
    ibase = "(you.tor.nginx.uwsgi.flask.me)\n"
@@ -92,14 +95,14 @@ def led1():
        key = request.form.get("act")
        rc = "key is {}.".format(key)
        if key == "on":
-           action="https://octopuslab.cz/apitest/led1.php?light=on"
+           action="https://octopuslab.cz/api/led1.php?light=on"
            try:
              res = httpx.get(action)
              rc = "ok, on (" + str(res) + ")"
            except:
              rc = "server.err"
        if key == "off":
-           action="https://octopuslab.cz/apitest/led1.php?light=off"
+           action="https://octopuslab.cz/api/led1.php?light=off"
            try:
              res = httpx.get(action)
              rc = "ok, off (" + str(res) + ")"
@@ -135,6 +138,13 @@ def chat():
     return render_template('chat.html', form_nick = form_nick, msg_list=msg_list)
 
 
+@app.route("/qrcode", methods=['GET'])
+def get_qrcode():
+    # please get /qrcode?data=<qrcode_data>
+    data = request.args.get("data", "")
+    return send_file(qrcode(data, mode="raw"), mimetype="image/png")
+
 
 #from flask import Flask, redirect, url_for, request
 #app = Flask(__name__)
+
