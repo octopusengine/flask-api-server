@@ -1,4 +1,4 @@
 Bootstrap-Flask==1.5
-Flask==1.1.2
+Flask==2.3.2
 httpx
 
